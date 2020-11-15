@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/model/marca_model.dart';
 import 'package:flutter_bloc/model/pessoa_model.dart';
 import '../widgets/thumb_widget.dart';
 
@@ -9,18 +10,19 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
-  PessoaModel pessoa = new PessoaModel();
-  List<PessoaModel> _lista;
-
+//  PessoaModel pessoa = new PessoaModel();
+//  List<PessoaModel> _lista;
+  MarcaModel marca = new MarcaModel();
+  List<MarcaModel> _lista;
   @override
   void initState() {
     super.initState();
-    _lista = pessoa.buscarLista;
+    _lista = marca.buscarLista;
     //_buscarArquivos();
   }
 
   _buscarArquivos(){
-    _lista = pessoa.buscarLista;
+    _lista = marca.buscarLista;
   }
 
 
@@ -40,8 +42,24 @@ class _HomePageState extends State<HomePage> {
   }
 
   _card(objeto){
-    return ListTile(
-      leading: Text(objeto.nome),
+    return Card(
+      child: Padding(
+        padding: EdgeInsets.all(5),
+          child: ListTile(
+            title: Text(objeto.nome),
+            leading: CircleAvatar(
+              radius: 30,
+              child: Padding(
+                padding: EdgeInsets.all(5.0),
+                child: FittedBox(
+                  child: Image(image: AssetImage("assets/imagens/${objeto.imagem}"),),
+                ),
+              ),
+            ),
+            subtitle: Text("US\$ ${objeto.fortuna.toString()} bilhões"),
+          ),
+      ),
+
     );
   }
 
