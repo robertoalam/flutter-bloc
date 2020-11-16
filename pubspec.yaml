@@ -53,12 +53,17 @@ flutter:
     - assets/imagens/disney.png
     - assets/imagens/gm.png
     - assets/imagens/google.png
+    - assets/imagens/huawei.png
     - assets/imagens/mc.png
     - assets/imagens/mercedez.png
     - assets/imagens/microsoft.png
+    - assets/imagens/nike.png
+    - assets/imagens/pepsi.png
     - assets/imagens/pepsico.png
     - assets/imagens/samsung.png
     - assets/imagens/toyota.png
+    - assets/imagens/walmart.png
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

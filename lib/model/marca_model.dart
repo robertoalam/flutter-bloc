@@ -17,8 +17,11 @@ class MarcaModel{
       new MarcaModel(nome:'Mercedes-Benz' ,fortuna: 49.26 , imagem: "mercedez.png") ,
       new MarcaModel(nome:"McDonald's" ,fortuna:  42.8 , imagem: "mc.png") ,
       new MarcaModel(nome:'Disney ' ,fortuna: 40.77 , imagem: "disney.png") ,
-      new MarcaModel(nome:'Pepsico' ,fortuna: 39 , imagem: "pesico.png") ,
-      new MarcaModel(nome:'GM' ,fortuna: 38.67 , imagem: "gm.png") ,
+      new MarcaModel(nome:'Pepsico' ,fortuna: 39 , imagem: "pepsico.png") ,
+      new MarcaModel(nome:'GM' ,fortuna: 38.67 , imagem: "gm.png"),
+      new MarcaModel(nome:'Nike' ,fortuna: 37.5 , imagem: "nike.png"),
+      new MarcaModel(nome:'Walmart' ,fortuna: 37 , imagem: "walmart.png"),
+      new MarcaModel(nome:'Huawei' ,fortuna: 36.5 , imagem: "huawei.png"),
 
     ];
   }

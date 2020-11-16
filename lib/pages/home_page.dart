@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/model/marca_model.dart';
-import 'package:flutter_bloc/model/pessoa_model.dart';
-import '../widgets/thumb_widget.dart';
+import '../model/meu_bloc.dart';
+import '../model/marca_model.dart';
+import '../widgets/thumb_grid_widget.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -10,6 +10,8 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
+  MeuBlocModel bloc = MeuBlocModel();
+  int total = 0;
 //  PessoaModel pessoa = new PessoaModel();
 //  List<PessoaModel> _lista;
   MarcaModel marca = new MarcaModel();
@@ -25,42 +27,24 @@ class _HomePageState extends State<HomePage> {
     _lista = marca.buscarLista;
   }
 
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("HOME"),
-      ),
-      body: ListView.builder(
-              itemCount: _lista.length,
-              itemBuilder: (BuildContext context, int index) {
-                return _card(_lista[index]);
-              },
-          ),
-    );
-  }
-
-  _card(objeto){
-    return Card(
-      child: Padding(
-        padding: EdgeInsets.all(5),
-          child: ListTile(
-            title: Text(objeto.nome),
-            leading: CircleAvatar(
-              radius: 30,
-              child: Padding(
-                padding: EdgeInsets.all(5.0),
-                child: FittedBox(
-                  child: Image(image: AssetImage("assets/imagens/${objeto.imagem}"),),
-                ),
-              ),
+    return StreamBuilder(
+        stream: bloc.output,
+        builder: (context, snapshot) {
+          return Scaffold(
+            appBar: AppBar(
+              title: Text("HOME - ${bloc.total}"),
             ),
-            subtitle: Text("US\$ ${objeto.fortuna.toString()} bilhões"),
-          ),
-      ),
-
+            body: GridView.builder(
+              gridDelegate: new SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount:  3),
+              itemCount: _lista.length,
+              itemBuilder: (context, index) {
+                return ThumbGrid( objeto: _lista[index], bloc: bloc,);
+              },
+            ),
+          );
+        },
     );
   }
-
 }
