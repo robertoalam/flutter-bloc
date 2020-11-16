@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/model/marca_model.dart';
-import 'package:flutter_bloc/model/meu_bloc.dart';
+import '../model/marca_model.dart';
+import '../model/meu_bloc.dart';
 
 
 class ThumbGrid extends StatefulWidget {
@@ -33,7 +33,7 @@ class _ThumbGridState extends State<ThumbGrid> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               CircleAvatar(
-                radius: 30,
+                radius: 35,
                 child: Padding(
                   padding: EdgeInsets.all(5.0),
                   child: FittedBox(
@@ -57,7 +57,6 @@ class _ThumbGridState extends State<ThumbGrid> {
   }
 
   _inverter(){
-
     setState(() {
       _selecionado = !_selecionado;
     });

@@ -12,20 +12,14 @@ class _HomePageState extends State<HomePage> {
 
   MeuBlocModel bloc = MeuBlocModel();
   int total = 0;
-//  PessoaModel pessoa = new PessoaModel();
-//  List<PessoaModel> _lista;
   MarcaModel marca = new MarcaModel();
   List<MarcaModel> _lista;
   @override
   void initState() {
     super.initState();
     _lista = marca.buscarLista;
-    //_buscarArquivos();
   }
 
-  _buscarArquivos(){
-    _lista = marca.buscarLista;
-  }
 
   @override
   Widget build(BuildContext context) {
